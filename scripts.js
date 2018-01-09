@@ -26,19 +26,18 @@ var sprintFunctions = {
     // your code here
     // all spaces turn into _ and has no
     // punctuations
-    punctuations = '/[.,\/#!$%\^&\*;:{}=\-`~()]/g';
+    var noChars = string.replace(/[.,\/#!$%\^&\*;:{}=\-`~()]/g,"");
+    var finalString = noChars.replace(/\s{2,}/g," ");
+    var array = finalString.split('');
+    array[0] = array[0].toUpperCase();
 
-    array = string.split('');
     for (var i=0; i<array.length; i++) {
-      if(array[i] === ' '){
+      if (array[i] === ' ') {
         array[i] = '_';
-      }
-
-      if (punctuations.indexOf(array[i]) !== -1) {
-        delete array[i];
+        array[i+1] = array[i+1].toUpperCase();
       }
     }
-    return array.join('');
+    console.log(array.join(''));
   },
 
   compareArrays: function(array1, array2){
