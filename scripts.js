@@ -39,13 +39,6 @@ var sprintFunctions = {
       }
     }
     return array.join('');
-  }
-
-
-    //split into array first
-    //use if/else method
-    //if string[i] === " " then
-    //if string[i]+1
   },
 
   compareArrays: function(array1, array2){
